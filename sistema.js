@@ -436,8 +436,8 @@ function atualizarBookOfertas() {
     
     const row = tbody.insertRow();
     row.innerHTML = `
-      <td>${ativo}</td>
-      <td>${precoAtual.toFixed(2)}</td>
+      <td class="asset">${ativo}</td>
+      <td class="price">${precoAtual.toFixed(2)}</td>
       <td class="${variacao >= 0 ? 'positive' : 'negative'}">${variacao >= 0 ? '+' : ''}${variacao.toFixed(2)}%</td>
     `;
   });
@@ -446,9 +446,8 @@ function atualizarBookOfertas() {
 // Função para atualizar carteira
 function atualizarCarteira() {
   const portfolioEmpty = document.getElementById('portfolioEmpty');
-  const tableWrapper = document.querySelector('#carteira').parentElement;
+  const tableContainer = document.querySelector('#carteira').parentElement;
   const tbody = document.querySelector('#carteira tbody');
-  const valorTotalElement = document.getElementById('valorTotal');
   
   if (!tbody) return;
   
@@ -459,13 +458,12 @@ function atualizarCarteira() {
   
   if (ativosCarteira.length === 0) {
     portfolioEmpty.style.display = 'block';
-    tableWrapper.style.display = 'none';
-    valorTotalElement.textContent = 'R$ 0,00';
+    tableContainer.style.display = 'none';
     return;
   }
   
   portfolioEmpty.style.display = 'none';
-  tableWrapper.style.display = 'block';
+  tableContainer.style.display = 'block';
   
   ativosCarteira.forEach(ativo => {
     const posicao = carteira[ativo];
@@ -475,14 +473,12 @@ function atualizarCarteira() {
     
     const row = tbody.insertRow();
     row.innerHTML = `
-      <td>${ativo}</td>
+      <td class="asset">${ativo}</td>
       <td>${posicao.quantidade}</td>
-      <td>R$ ${precoAtual.toFixed(2)}</td>
-      <td>R$ ${valorTotalAtivo.toFixed(2)}</td>
+      <td class="price">R$ ${precoAtual.toFixed(2)}</td>
+      <td class="price">R$ ${valorTotalAtivo.toFixed(2)}</td>
     `;
   });
-  
-  valorTotalElement.textContent = `R$ ${valorTotal.toFixed(2)}`;
 }
 
 // Função para atualizar extrato

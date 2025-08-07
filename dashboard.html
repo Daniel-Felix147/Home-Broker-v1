@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     /* Garantir que o dashboard seja exibido */
-    #dashboard {
+    .dashboard {
       display: block !important;
       opacity: 1 !important;
       visibility: visible !important;
@@ -21,7 +21,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, #181A20 0%, #2A2D35 100%);
+      background: #0a0e17;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -43,7 +43,7 @@
     }
     
     .loading-text {
-      color: #F0B90B;
+      color: #f0b90b;
       font-size: 18px;
       font-weight: bold;
       margin-bottom: 20px;
@@ -52,8 +52,8 @@
     .loading-spinner {
       width: 40px;
       height: 40px;
-      border: 3px solid #333;
-      border-top: 3px solid #F0B90B;
+      border: 3px solid #2a2d35;
+      border-top: 3px solid #f0b90b;
       border-radius: 50%;
       animation: spin 1s linear infinite;
     }
@@ -77,38 +77,58 @@
     <div class="loading-spinner"></div>
   </div>
 
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <img src="Imagem/logo-fundo-escuro.jpeg" class="logo" alt="E2E Logo" />
+      <nav class="nav-menu">
+        <a href="#" class="nav-link">Início</a>
+        <a href="#" class="nav-link">Mercado</a>
+        <a href="#" class="nav-link">Carteira</a>
+        <a href="#" class="nav-link">Histórico</a>
+      </nav>
+    </div>
+    <div class="header-right">
+      <button class="btn-secondary" onclick="logout()">
+        <i class="fas fa-sign-out-alt"></i>
+        Sair
+      </button>
+    </div>
+  </header>
+
   <!-- Dashboard -->
-  <main id="dashboard">
-    <!-- Barra superior do dashboard -->
-    <header class="dashboard-topbar">
-      <div class="topbar-left">
-        <img src="Imagem/logo-fundo-escuro.jpeg" class="dashboard-logo" alt="E2E Logo" />
-        <div class="user-welcome">
-          <h1 class="welcome-text">Bem-vindo, <span id="username">Carregando...</span></h1>
-          <div class="balance-display">
-            <span class="balance-label">Saldo Disponível:</span>
-            <span class="balance-value">R$ <span id="saldo">0,00</span></span>
-          </div>
+  <main class="dashboard">
+    <!-- Dashboard Header -->
+    <div class="dashboard-header">
+      <div class="user-info">
+        <div class="user-avatar">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="user-details">
+          <h3 id="username">Carregando...</h3>
+          <div class="user-balance">Saldo: R$ <span id="saldo">0,00</span></div>
         </div>
       </div>
-      <button class="logout-btn" onclick="logout()">Sair</button>
-    </header>
+    </div>
 
-    <!-- Conteúdo principal do dashboard -->
+    <!-- Dashboard Content -->
     <div class="dashboard-content">
-      <!-- Painéis principais: Book e Carteira lado a lado -->
-      <div class="main-panels">
+      <!-- Painéis principais -->
+      <div class="dashboard-grid">
         <!-- Book de Ofertas -->
-        <div class="card book-card">
+        <div class="dashboard-card">
           <div class="card-header">
-            <h2 class="card-title"><i class="fas fa-chart-line"></i> Book de Ofertas B3</h2>
+            <h2 class="card-title">
+              <i class="fas fa-chart-line"></i>
+              Book de Ofertas B3
+            </h2>
             <div class="market-status">
               <span class="status-dot"></span>
               <span>Mercado Aberto</span>
             </div>
           </div>
-          <div class="table-wrapper">
-            <table id="book" class="book-table">
+          <div class="table-container">
+            <table id="book" class="table">
               <thead>
                 <tr>
                   <th>Ativo</th>
@@ -122,21 +142,22 @@
         </div>
 
         <!-- Carteira -->
-        <div class="card wallet-card">
+        <div class="dashboard-card">
           <div class="card-header">
-            <h2 class="card-title"><i class="fas fa-wallet"></i> Minha Carteira</h2>
-            <div class="wallet-total">
-              <span>Valor Total: </span>
-              <span id="valorTotal" class="total-value">R$ 0,00</span>
-            </div>
+            <h2 class="card-title">
+              <i class="fas fa-wallet"></i>
+              Minha Carteira
+            </h2>
           </div>
-          <div id="portfolioEmpty" class="empty-wallet">
-            <div class="empty-icon"><i class="fas fa-chart-line"></i></div>
+          <div id="portfolioEmpty" class="empty-state">
+            <div class="empty-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
             <p class="empty-text">Sua carteira está vazia</p>
             <small class="empty-subtext">Comece investindo nos ativos disponíveis</small>
           </div>
-          <div class="table-wrapper" style="display: none;">
-            <table id="carteira" class="wallet-table">
+          <div class="table-container" style="display: none;">
+            <table id="carteira" class="table">
               <thead>
                 <tr>
                   <th>Ativo</th>
@@ -153,56 +174,71 @@
 
       <!-- Seção de Trading -->
       <div class="trading-section">
-        <h2 class="trading-header"><i class="fas fa-exchange-alt"></i> Boleta de Compra e Venda</h2>
+        <h2 class="trading-header">
+          <i class="fas fa-exchange-alt"></i>
+          Boleta de Compra e Venda
+        </h2>
         <div class="trading-form">
-          <div class="form-group">
+          <div class="form-row">
             <label><i class="fas fa-tag"></i> Tipo de Operação</label>
             <select id="tipo">
               <option value="Compra">Compra</option>
               <option value="Venda">Venda</option>
             </select>
           </div>
-          <div class="form-group">
+          <div class="form-row">
             <label><i class="fas fa-chart-bar"></i> Ativo</label>
             <select id="ativo"></select>
           </div>
-          <div class="form-group">
+          <div class="form-row">
             <label><i class="fas fa-sort-numeric-up"></i> Quantidade</label>
             <input type="number" id="quantidade" placeholder="Múltiplos de 100" />
           </div>
-          <div class="form-group">
+          <div class="form-row">
             <label><i class="fas fa-dollar-sign"></i> Valor por Lote (R$)</label>
             <input type="number" id="valor" placeholder="0.00" step="0.01" />
           </div>
-          <button class="submit-order-btn" onclick="executarOrdem()">
-            <i class="fas fa-paper-plane"></i> Enviar Ordem
+          <button class="btn-trade" onclick="executarOrdem()">
+            <i class="fas fa-paper-plane"></i>
+            Enviar Ordem
           </button>
         </div>
-        <div id="mensagem" class="feedback-message"></div>
+        <div id="mensagem" class="message"></div>
       </div>
 
       <!-- Seções adicionais -->
       <div class="additional-sections">
         <!-- Alterar Senha -->
-        <div class="section">
-          <h3 class="section-title"><i class="fas fa-lock"></i> Alterar Senha</h3>
-          <div class="password-form">
-            <div class="password-wrapper">
-              <input type="password" id="novaSenha" placeholder="Nova senha (mínimo 3 caracteres)" />
-              <span class="password-toggle" id="toggleSenha" onclick="toggleSenha()">👁️</span>
+        <div class="section-card">
+          <h3 class="section-title">
+            <i class="fas fa-lock"></i>
+            Alterar Senha
+          </h3>
+          <div class="form-group">
+            <label class="form-label">Nova senha</label>
+            <div class="input-wrapper">
+              <i class="fas fa-lock input-icon"></i>
+              <input type="password" id="novaSenha" class="form-input input-with-icon" placeholder="Mínimo 3 caracteres" />
+              <button class="toggle-password" onclick="toggleSenha('novaSenha', this)">
+                <i class="fas fa-eye"></i>
+              </button>
             </div>
-            <button class="password-btn" onclick="alterarSenha()">
-              <i class="fas fa-save"></i> Salvar Nova Senha
-            </button>
-            <div id="senhaMsg" class="feedback-message"></div>
           </div>
+          <button class="btn-auth" onclick="alterarSenha()">
+            <i class="fas fa-save"></i>
+            Salvar Nova Senha
+          </button>
+          <div id="senhaMsg" class="message"></div>
         </div>
 
         <!-- Extrato de Operações -->
-        <div class="section">
-          <h3 class="section-title"><i class="fas fa-list-alt"></i> Extrato de Operações</h3>
-          <div class="table-wrapper">
-            <table id="extrato" class="history-table">
+        <div class="section-card">
+          <h3 class="section-title">
+            <i class="fas fa-list-alt"></i>
+            Extrato de Operações
+          </h3>
+          <div class="table-container">
+            <table id="extrato" class="table">
               <thead>
                 <tr>
                   <th>Data/Hora</th>
@@ -219,10 +255,13 @@
         </div>
 
         <!-- Ordens Pendentes -->
-        <div class="section">
-          <h3 class="section-title"><i class="fas fa-clock"></i> Ordens Pendentes</h3>
-          <div class="table-wrapper">
-            <table id="ordens" class="orders-table">
+        <div class="section-card">
+          <h3 class="section-title">
+            <i class="fas fa-clock"></i>
+            Ordens Pendentes
+          </h3>
+          <div class="table-container">
+            <table id="ordens" class="table">
               <thead>
                 <tr>
                   <th>Data/Hora</th>

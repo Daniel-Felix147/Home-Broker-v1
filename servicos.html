@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Serviços - E2E Home Broker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <!-- Toggle de Tema -->
+  <button class="theme-toggle" onclick="toggleTheme()" title="Alternar tema">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <div class="main-banner">
+    <img src="Imagem/banner.jpg" alt="Banner E2E Treinamentos" class="main-banner-image">
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <img src="Imagem/logo-fundo-escuro.jpeg" alt="E2E Treinamentos" class="nav-logo-img">
+          <span class="nav-brand">E2E Treinamentos</span>
+        </div>
+        <div class="nav-menu">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="sobre.html" class="nav-link">Sobre</a>
+          <a href="servicos.html" class="nav-link">Serviços</a>
+          <a href="contato.html" class="nav-link">Contato</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container">
+    <div style="background: var(--white); border-radius: 15px; padding: 40px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); margin-bottom: 30px;">
+      <h1 style="text-align: center; color: var(--primary-color); margin-bottom: 30px;">Nossos Serviços</h1>
+      <p style="text-align: center; font-size: 1.1rem; color: var(--text-light); margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
+        Oferecemos uma plataforma completa de trading com ferramentas profissionais para todos os tipos de investidores.
+      </p>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-bottom: 40px;">
+        <div style="background: var(--white); border: 2px solid #e9ecef; border-radius: 15px; padding: 30px; transition: all 0.3s ease; position: relative; overflow: hidden;">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <i class="fas fa-chart-line" style="font-size: 1.5rem; color: var(--white);"></i>
+          </div>
+          <h3 style="color: var(--primary-color); margin-bottom: 15px; font-size: 1.3rem;">Trading de Ações</h3>
+          <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 20px;">
+            Opere ações das principais empresas brasileiras com nossa plataforma avançada de trading.
+          </p>
+          <ul style="margin-bottom: 25px; color: var(--text-dark);">
+            <li style="margin-bottom: 8px;">Acesso a mais de 400 ações</li>
+            <li style="margin-bottom: 8px;">Execução em tempo real</li>
+            <li style="margin-bottom: 8px;">Análise técnica integrada</li>
+            <li style="margin-bottom: 8px;">Relatórios detalhados</li>
+          </ul>
+          <div style="border-top: 1px solid #e9ecef; padding-top: 20px; text-align: center;">
+            <span style="display: block; font-size: 1.5rem; font-weight: 700; color: var(--primary-color); margin-bottom: 5px;">Taxa Zero</span>
+            <span style="color: var(--text-light); font-size: 0.9rem;">Para ordens até R$ 100</span>
+          </div>
+        </div>
+
+        <div style="background: var(--white); border: 2px solid var(--primary-color); border-radius: 15px; padding: 30px; transition: all 0.3s ease; position: relative; overflow: hidden; background: linear-gradient(135deg, #f8f9ff, #e6f3ff);">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <i class="fas fa-chart-bar" style="font-size: 1.5rem; color: var(--white);"></i>
+          </div>
+          <h3 style="color: var(--primary-color); margin-bottom: 15px; font-size: 1.3rem;">Day Trading</h3>
+          <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 20px;">
+            Plataforma especializada para day traders com ferramentas avançadas e execução ultrarrápida.
+          </p>
+          <ul style="margin-bottom: 25px; color: var(--text-dark);">
+            <li style="margin-bottom: 8px;">Execução em milissegundos</li>
+            <li style="margin-bottom: 8px;">Gráficos em tempo real</li>
+            <li style="margin-bottom: 8px;">Alerta de preços</li>
+            <li style="margin-bottom: 8px;">Suporte especializado</li>
+          </ul>
+          <div style="border-top: 1px solid #e9ecef; padding-top: 20px; text-align: center;">
+            <span style="display: block; font-size: 1.5rem; font-weight: 700; color: var(--primary-color); margin-bottom: 5px;">R$ 0,99</span>
+            <span style="color: var(--text-light); font-size: 0.9rem;">Por ordem executada</span>
+          </div>
+        </div>
+
+        <div style="background: var(--white); border: 2px solid #e9ecef; border-radius: 15px; padding: 30px; transition: all 0.3s ease; position: relative; overflow: hidden;">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <i class="fas fa-building" style="font-size: 1.5rem; color: var(--white);"></i>
+          </div>
+          <h3 style="color: var(--primary-color); margin-bottom: 15px; font-size: 1.3rem;">Fundos Imobiliários</h3>
+          <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 20px;">
+            Invista em fundos imobiliários com nossa plataforma especializada em renda passiva.
+          </p>
+          <ul style="margin-bottom: 25px; color: var(--text-dark);">
+            <li style="margin-bottom: 8px;">Mais de 200 FIIs disponíveis</li>
+            <li style="margin-bottom: 8px;">Distribuição automática</li>
+            <li style="margin-bottom: 8px;">Relatórios mensais</li>
+            <li style="margin-bottom: 8px;">Gestão profissional</li>
+          </ul>
+          <div style="border-top: 1px solid #e9ecef; padding-top: 20px; text-align: center;">
+            <span style="display: block; font-size: 1.5rem; font-weight: 700; color: var(--primary-color); margin-bottom: 5px;">Taxa Zero</span>
+            <span style="color: var(--text-light); font-size: 0.9rem;">Para compras e vendas</span>
+          </div>
+        </div>
+
+        <div style="background: var(--white); border: 2px solid #e9ecef; border-radius: 15px; padding: 30px; transition: all 0.3s ease; position: relative; overflow: hidden;">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <i class="fas fa-coins" style="font-size: 1.5rem; color: var(--white);"></i>
+          </div>
+          <h3 style="color: var(--primary-color); margin-bottom: 15px; font-size: 1.3rem;">Tesouro Direto</h3>
+          <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 20px;">
+            Invista em títulos públicos federais com segurança e facilidade através da nossa plataforma.
+          </p>
+          <ul style="margin-bottom: 25px; color: var(--text-dark);">
+            <li style="margin-bottom: 8px;">Todos os títulos disponíveis</li>
+            <li style="margin-bottom: 8px;">Compra e venda automática</li>
+            <li style="margin-bottom: 8px;">Reinvestimento automático</li>
+            <li style="margin-bottom: 8px;">Custódia gratuita</li>
+          </ul>
+          <div style="border-top: 1px solid #e9ecef; padding-top: 20px; text-align: center;">
+            <span style="display: block; font-size: 1.5rem; font-weight: 700; color: var(--primary-color); margin-bottom: 5px;">Taxa Zero</span>
+            <span style="color: var(--text-light); font-size: 0.9rem;">Para todos os títulos</span>
+          </div>
+        </div>
+
+        <div style="background: var(--white); border: 2px solid #e9ecef; border-radius: 15px; padding: 30px; transition: all 0.3s ease; position: relative; overflow: hidden;">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <i class="fas fa-users" style="font-size: 1.5rem; color: var(--white);"></i>
+          </div>
+          <h3 style="color: var(--primary-color); margin-bottom: 15px; font-size: 1.3rem;">Consultoria Personalizada</h3>
+          <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 20px;">
+            Receba orientação personalizada de nossos especialistas em investimentos.
+          </p>
+          <ul style="margin-bottom: 25px; color: var(--text-dark);">
+            <li style="margin-bottom: 8px;">Análise de perfil</li>
+            <li style="margin-bottom: 8px;">Planejamento financeiro</li>
+            <li style="margin-bottom: 8px;">Estratégias personalizadas</li>
+            <li style="margin-bottom: 8px;">Acompanhamento mensal</li>
+          </ul>
+          <div style="border-top: 1px solid #e9ecef; padding-top: 20px; text-align: center;">
+            <span style="display: block; font-size: 1.5rem; font-weight: 700; color: var(--primary-color); margin-bottom: 5px;">R$ 299,00</span>
+            <span style="color: var(--text-light); font-size: 0.9rem;">Por mês</span>
+          </div>
+        </div>
+
+        <div style="background: var(--white); border: 2px solid #e9ecef; border-radius: 15px; padding: 30px; transition: all 0.3s ease; position: relative; overflow: hidden;">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <i class="fas fa-graduation-cap" style="font-size: 1.5rem; color: var(--white);"></i>
+          </div>
+          <h3 style="color: var(--primary-color); margin-bottom: 15px; font-size: 1.3rem;">Plano Premium</h3>
+          <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 20px;">
+            Acesso completo a todos os serviços com taxas reduzidas e benefícios exclusivos.
+          </p>
+          <ul style="margin-bottom: 25px; color: var(--text-dark);">
+            <li style="margin-bottom: 8px;">Todas as operações com taxa zero</li>
+            <li style="margin-bottom: 8px;">Consultoria personalizada inclusa</li>
+            <li style="margin-bottom: 8px;">Relatórios avançados</li>
+            <li style="margin-bottom: 8px;">Suporte prioritário 24/7</li>
+          </ul>
+          <div style="border-top: 1px solid #e9ecef; padding-top: 20px; text-align: center;">
+            <span style="display: block; font-size: 1.5rem; font-weight: 700; color: var(--primary-color); margin-bottom: 5px;">R$ 99,00</span>
+            <span style="color: var(--text-light); font-size: 0.9rem;">Por mês</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); color: var(--white); padding: 40px; border-radius: 15px; margin-top: 40px;">
+        <h2 style="margin-bottom: 15px; font-size: 2rem;">Pronto para começar a investir?</h2>
+        <p style="margin-bottom: 30px; font-size: 1.1rem; opacity: 0.9;">Abra sua conta gratuitamente e comece a investir hoje mesmo!</p>
+                    <a href="index.html#cadastro" onclick="openCadastroFromServices()" style="background: var(--white); color: var(--primary-color); padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">Abrir Conta Grátis</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+                  // Função para abrir cadastro a partir da página de serviços
+              function openCadastroFromServices() {
+                // Redirecionar para a página principal com hash para abrir modal
+                window.location.href = 'index.html#cadastro';
+              }
+    
+    // Carregar tema salvo
+    document.addEventListener('DOMContentLoaded', function() {
+      loadTheme();
+    });
+  </script>
+</body>
+</html> 

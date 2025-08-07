@@ -1,0 +1,913 @@
+/* Estilos modernos inspirados no SiteDoTiago */
+:root {
+    --primary-color: #0066cc;
+    --primary-dark: #004499;
+    --primary-light: #3399ff;
+    --secondary-color: #f8f9fa;
+    --text-dark: #333;
+    --text-light: #666;
+    --white: #ffffff;
+    --error-color: #dc3545; /* Voltando ao vermelho original */
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    
+    /* Tema escuro */
+    --dark-bg: #1a1a1a;
+    --dark-card: #2d2d2d;
+    --dark-text: #ffffff;
+    --dark-border: #404040;
+}
+
+/* Melhorias gerais */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--white);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+body.dark-theme {
+    background: linear-gradient(135deg, var(--dark-bg), #000);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Classe hidden */
+.hidden {
+    display: none !important;
+}
+
+/* Banner principal com gradiente */
+    .main-banner {
+      position: relative;
+    background: #e3f2fd;
+    color: var(--text-dark);
+    padding: 20px 0;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .main-banner-image {
+      width: 100%;
+    height: 200px;
+      object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    }
+    
+/* Navbar moderna */
+    .navbar {
+    background: #2c3e50;
+      backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 15px 0;
+    margin-bottom: 20px;
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .nav-logo {
+      display: flex;
+      align-items: center;
+    gap: 15px;
+    }
+    
+    .nav-logo-img {
+      width: 40px;
+      height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    }
+    
+    .nav-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    }
+    
+    .nav-menu {
+      display: flex;
+      gap: 30px;
+    }
+    
+    .nav-link {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 12px 18px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .nav-link:hover {
+      background: rgba(0, 102, 204, 0.1);
+    transform: translateY(-2px);
+}
+    
+
+
+/* Modal de Cadastro */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: var(--white);
+    width: 90%;
+    max-width: 600px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    animation: modalOpen 0.4s ease;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+@keyframes modalOpen {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: var(--white);
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-modal:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+/* Formulários modernos */
+#login, #cadastro, #recuperarSenha {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+#login::before, #cadastro::before, #recuperarSenha::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+}
+
+.login-logo {
+  text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
+}
+
+/* Títulos modernos */
+h1 {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+h2 {
+    color: var(--text-dark);
+    font-size: 1.8rem;
+  text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+h3 {
+    color: var(--text-dark);
+    font-size: 1.4rem;
+    margin: 25px 0 15px;
+    font-weight: 600;
+}
+
+/* Campos de input modernos */
+.input-icon-wrapper {
+    position: relative;
+  margin-bottom: 20px;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    z-index: 2;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="number"], select {
+  width: 100%;
+    padding: 15px 15px 15px 50px;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: var(--white);
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="number"]:focus, select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Validação visual avançada */
+.input-icon-wrapper.valid input {
+    border-color: var(--success-color);
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+}
+
+.input-icon-wrapper.valid .input-icon {
+    color: var(--success-color);
+}
+
+.input-icon-wrapper.invalid input {
+    border-color: var(--error-color); /* Voltando ao vermelho */
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1); /* Sombra vermelha */
+}
+
+.input-icon-wrapper.invalid .input-icon {
+    color: var(--error-color); /* Voltando ao vermelho */
+}
+
+/* Wrapper para senha com toggle */
+.senha-wrapper {
+  position: relative;
+}
+
+.toggleSenha {
+  position: absolute;
+    right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.toggleSenha:hover {
+    color: var(--primary-color);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Barra de força da senha */
+.strength-bar {
+    width: 100%;
+    height: 6px;
+    background: #e1e5e9;
+    border-radius: 3px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.strength-bar div {
+    height: 100%;
+    width: 0%;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+.strength-bar.weak div {
+    width: 33.33%;
+    background: var(--error-color); /* Voltando ao vermelho */
+}
+
+.strength-bar.medium div {
+    width: 66.66%;
+    background: var(--warning-color);
+}
+
+.strength-bar.strong div {
+  width: 100%;
+    background: var(--success-color);
+}
+
+/* Botões modernos */
+.btn-azul {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: var(--white);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-azul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+  width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-azul:hover::before {
+    left: 100%;
+}
+
+.btn-azul:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 102, 204, 0.3);
+}
+
+.btn-azul:active {
+    transform: translateY(-1px);
+}
+
+.btn-azul:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Loading spinner */
+.loading {
+  display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--white);
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 10px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Mensagens de erro e sucesso */
+.error {
+    color: var(--error-color);
+    font-size: 0.9rem;
+    margin-top: 5px;
+    padding: 8px 12px;
+    background: rgba(220, 53, 69, 0.1); /* Voltando ao fundo vermelho claro */
+    border-radius: 8px;
+    border-left: 4px solid var(--error-color); /* Borda vermelha */
+    animation: slideIn 0.3s ease;
+}
+
+.success {
+    color: var(--success-color);
+    font-size: 0.9rem;
+    margin-top: 5px;
+    padding: 8px 12px;
+    background: rgba(40, 167, 69, 0.1);
+    border-radius: 8px;
+    border-left: 4px solid var(--success-color);
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Links modernos */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* Portal do usuário */
+#portal {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.blue-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: var(--white);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#logoutBtn {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    border: 2px solid var(--white);
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    float: right;
+}
+
+#logoutBtn:hover {
+    background: var(--white);
+    color: var(--primary-color);
+}
+
+/* Tabelas modernas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+th {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e1e5e9;
+}
+
+tr:hover {
+    background: rgba(0, 102, 204, 0.05);
+}
+
+/* Layout flexível */
+.flex {
+    display: flex;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.scrollable {
+    max-height: 300px;
+    overflow-y: auto;
+    border-radius: 12px;
+    border: 2px solid #e1e5e9;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .flex {
+        flex-direction: column;
+  }
+  
+  .nav-menu {
+        display: none;
+    }
+    
+    #login, #cadastro, #recuperarSenha {
+        margin: 20px;
+        padding: 30px 20px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 10px;
+    }
+    
+    .modal-body {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#login, #cadastro, #recuperarSenha, #portal {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Estados de foco melhorados */
+input:focus + .input-icon {
+    color: var(--primary-light);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Melhorias para acessibilidade */
+input:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.btn-azul:focus-visible {
+    outline: 2px solid var(--white);
+    outline-offset: 2px;
+}
+
+/* Estilos para listas e parágrafos */
+p, ul {
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* Estilos para elementos específicos do portal */
+select, input[type="number"] {
+    margin: 5px 5px 5px 0;
+}
+
+/* Botão cancelar */
+.btn-cancelar {
+    background: var(--warning-color);
+    color: var(--text-dark);
+    border: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-cancelar:hover {
+    background: #e0a800;
+    transform: translateY(-2px);
+}
+
+/* Tema escuro */
+body.dark-theme #login,
+body.dark-theme #cadastro,
+body.dark-theme #recuperarSenha,
+body.dark-theme #portal,
+body.dark-theme .modal-content {
+    background: var(--dark-card);
+    color: var(--dark-text);
+}
+
+body.dark-theme input,
+body.dark-theme select {
+    background: var(--dark-bg);
+    border-color: var(--dark-border);
+    color: var(--dark-text);
+}
+
+body.dark-theme table {
+    background: var(--dark-card);
+}
+
+body.dark-theme td {
+    border-bottom-color: var(--dark-border);
+}
+
+/* Textos no tema escuro */
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme p,
+body.dark-theme li,
+body.dark-theme span,
+body.dark-theme label,
+body.dark-theme strong,
+body.dark-theme b,
+body.dark-theme em,
+body.dark-theme i {
+    color: var(--dark-text) !important;
+}
+
+/* Títulos específicos no tema escuro */
+body.dark-theme h1 {
+    color: var(--primary-light) !important;
+}
+
+body.dark-theme h2 {
+    color: var(--dark-text) !important;
+}
+
+body.dark-theme h3 {
+    color: var(--dark-text) !important;
+}
+
+/* Listas e parágrafos no tema escuro */
+body.dark-theme ul,
+body.dark-theme ol {
+    color: var(--dark-text);
+}
+
+body.dark-theme li {
+    color: var(--dark-text);
+}
+
+/* Elementos strong/b no tema escuro */
+body.dark-theme strong,
+body.dark-theme b {
+    color: var(--primary-light) !important;
+}
+
+/* Links no tema escuro */
+body.dark-theme a {
+    color: var(--primary-light);
+}
+
+body.dark-theme a:hover {
+    color: var(--primary-color);
+}
+
+/* Banner e navegação no tema escuro */
+body.dark-theme .main-banner {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)) !important;
+    color: var(--white) !important;
+}
+
+body.dark-theme .nav-brand {
+    color: var(--white) !important;
+}
+
+body.dark-theme .nav-logo-img {
+    border-color: var(--white) !important;
+}
+
+body.dark-theme .nav-link {
+    color: var(--white) !important;
+}
+
+body.dark-theme .nav-link:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Navegação no tema escuro */
+body.dark-theme .navbar {
+    background: #2c3e50 !important;
+}
+
+body.dark-theme .nav-link {
+    color: var(--white) !important;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+body.dark-theme .nav-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--white) !important;
+    transform: translateY(-2px);
+}
+
+/* Placeholders no tema escuro */
+body.dark-theme input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+body.dark-theme select option {
+    background: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+/* Ícones no tema escuro */
+body.dark-theme .input-icon {
+    color: var(--primary-light);
+}
+
+/* Tabelas no tema escuro */
+body.dark-theme th {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+body.dark-theme td {
+    color: var(--dark-text);
+}
+
+/* Mensagens no tema escuro */
+body.dark-theme .error {
+    background: rgba(220, 53, 69, 0.2); /* Voltando ao fundo vermelho escuro */
+    border-left-color: var(--error-color); /* Borda vermelha */
+}
+
+body.dark-theme .success {
+    background: rgba(40, 167, 69, 0.2);
+    border-left-color: var(--success-color);
+}
+
+/* Toggle de senha no tema escuro */
+body.dark-theme .toggleSenha {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+body.dark-theme .toggleSenha:hover {
+    color: var(--primary-light);
+}
+
+/* Loading spinner no tema escuro */
+body.dark-theme .loading {
+    border-color: rgba(255, 255, 255, 0.3);
+    border-top-color: var(--white);
+}
+
+/* Scrollbar no tema escuro */
+body.dark-theme .scrollable::-webkit-scrollbar {
+    width: 8px;
+}
+
+body.dark-theme .scrollable::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+
+body.dark-theme .scrollable::-webkit-scrollbar-thumb {
+    background: var(--dark-border);
+    border-radius: 4px;
+}
+
+body.dark-theme .scrollable::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* Elementos específicos do portal no tema escuro */
+body.dark-theme #username,
+body.dark-theme #saldo {
+    color: var(--white) !important;
+}
+
+/* Botões no tema escuro */
+body.dark-theme .btn-cancelar {
+    background: var(--warning-color);
+    color: var(--text-dark);
+}
+
+body.dark-theme .btn-cancelar:hover {
+    background: #e0a800;
+    color: var(--text-dark);
+}
+
+/* Toggle de tema */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    z-index: 1001;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(180deg);
+    background: var(--primary-dark);
+}
+
+/* Estilos responsivos para navegação */
+@media (max-width: 768px) {
+    .nav-link {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+    
+    .nav-menu {
+        gap: 15px;
+    }
+}
+
+/* Estilos específicos para página Sobre no tema escuro */
+body.dark-theme .container > div[style*="background: var(--white)"] {
+    background: var(--dark-card) !important;
+}
+
+body.dark-theme .container > div[style*="background: var(--white)"] h1,
+body.dark-theme .container > div[style*="background: var(--white)"] h2,
+body.dark-theme .container > div[style*="background: var(--white)"] h3,
+body.dark-theme .container > div[style*="background: var(--white)"] p,
+body.dark-theme .container > div[style*="background: var(--white)"] li,
+body.dark-theme .container > div[style*="background: var(--white)"] strong {
+    color: #000000 !important;
+}
+
+body.dark-theme .container > div[style*="background: var(--white)"] ul {
+    color: #000000 !important;
+}
+

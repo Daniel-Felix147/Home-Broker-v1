@@ -1,0 +1,211 @@
+  </div>
+</div>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>E2E Treinamentos - Home Broker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <!-- Toggle de Tema -->
+  <button class="theme-toggle" onclick="toggleTheme()" title="Alternar tema">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <div class="main-banner">
+    <img src="Imagem/banner.jpg" alt="Banner E2E Treinamentos" class="main-banner-image">
+    <div class="banner-text">
+      <h1 class="banner-title">ADLN <strong>Home Broker</strong></h1>
+    </div>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <img src="Imagem/logo-fundo-escuro.jpeg" alt="E2E Treinamentos" class="nav-logo-img">
+          <span class="nav-brand">E2E Treinamentos</span>
+        </div>
+        <div class="nav-menu">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="sobre.html" class="nav-link">Sobre</a>
+          <a href="servicos.html" class="nav-link">Serviços</a>
+          <a href="contato.html" class="nav-link">Contato</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="container">
+    <div id="login">
+      <div class="login-logo">
+        <img id="loginLogo" src="Imagem/logo-fundo-escuro.jpeg" alt="E2E Treinamentos Logo" class="logo-image">
+      </div>
+      <h1>E2E Treinamentos Brokers</h1>
+      <h2>Login</h2>
+      <p>Use:</p>
+      <ul>
+        <li>CPF: <b>111.111.111-11</b> | Senha: <b>123</b> → Conta A</li>
+        <li>CPF: <b>222.222.222-22</b> | Senha: <b>456</b> → Conta B</li>
+      </ul>
+      <div class="input-icon-wrapper">
+        <i class="fas fa-id-card input-icon"></i>
+        <input type="text" id="cpf" placeholder="111.111.111-11">
+      </div>
+      <div class="input-icon-wrapper senha-wrapper">
+        <i class="fas fa-lock input-icon"></i>
+        <input type="password" id="senha" placeholder="123">
+        <span class="toggleSenha" onclick="toggleSenha('senha', this)">👁️</span>
+      </div>
+      <button class="btn-azul" onclick="login()">Entrar</button>
+      <div id="loginMsg" class="error"></div>
+      <div style="margin-top: 10px; text-align: center;">
+        <span>Não tem conta? <a href="#" onclick="showCadastroModal()">Cadastre-se</a></span><br>
+        <span><a href="#" onclick="showRecuperarSenha()">Esqueci minha senha</a></span>
+      </div>
+    </div>
+
+    <!-- Modal de Cadastro -->
+    <div class="modal" id="cadastroModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3><i class="fas fa-user-plus"></i> Criar nova conta</h3>
+          <button class="close-modal" onclick="closeCadastroModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="login-logo">
+            <img src="Imagem/logo-fundo-escuro.jpeg" alt="E2E Treinamentos Logo" class="logo-image">
+          </div>
+          <h2>Cadastro de Conta</h2>
+          <form id="cadastroForm" autocomplete="off" onsubmit="return false;">
+            <div class="input-icon-wrapper">
+              <i class="fas fa-user input-icon"></i>
+              <input type="text" id="cadNome" placeholder="Seu nome completo" required oninput="validarCadastro()">
+            </div>
+            <span class="error" id="cadNomeMsg"></span>
+            
+            <div class="input-icon-wrapper">
+              <i class="fas fa-id-card input-icon"></i>
+              <input type="text" id="cadCpf" placeholder="111.111.111-11" required oninput="validarCadastro()">
+            </div>
+            <span class="error" id="cadCpfMsg"></span>
+            
+            <div class="input-icon-wrapper">
+              <i class="fas fa-envelope input-icon"></i>
+              <input type="email" id="cadEmail" placeholder="exemplo@email.com" required oninput="validarCadastro()">
+            </div>
+            <span class="error" id="cadEmailMsg"></span>
+            
+            <div class="input-icon-wrapper">
+              <i class="fas fa-phone input-icon"></i>
+              <input type="text" id="cadCel" placeholder="(99) 99999-9999" required oninput="validarCadastro()">
+            </div>
+            <span class="error" id="cadCelMsg"></span>
+            
+            <div class="input-icon-wrapper senha-wrapper">
+              <i class="fas fa-lock input-icon"></i>
+              <input type="password" id="cadSenha" placeholder="Mín. 8 caracteres, 1 número, 1 maiúscula" required oninput="validarCadastro()">
+              <span class="toggleSenha" onclick="toggleSenha('cadSenha', this)">👁️</span>
+            </div>
+            <div id="senhaStrengthBar" class="strength-bar"><div></div></div>
+            <span class="error" id="cadSenhaMsg"></span>
+            
+            <div class="input-icon-wrapper senha-wrapper">
+              <i class="fas fa-lock input-icon"></i>
+              <input type="password" id="cadSenha2" placeholder="Repita a senha" required oninput="validarCadastro()">
+              <span class="toggleSenha" onclick="toggleSenha('cadSenha2', this)">👁️</span>
+            </div>
+            <span class="error" id="cadSenha2Msg"></span>
+            
+            <button class="btn-azul" id="btnCriarConta" onclick="criarConta()" disabled>
+              <span id="btnCriarContaText">Criar Conta</span>
+              <span id="btnCriarContaLoading" class="loading hidden"> Processando...</span>
+            </button>
+            <div id="cadastroMsg" class="error"></div>
+            <div id="cadastroSuccess" class="success"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="recuperarSenha" class="hidden">
+      <div class="login-logo">
+        <img src="Imagem/logo-fundo-escuro.jpeg" alt="E2E Treinamentos Logo" class="logo-image">
+      </div>
+      <h1>E2E Treinamentos Brokers</h1>
+      <h2>Recuperação de Senha</h2>
+      <form id="recuperarSenhaForm" autocomplete="off" onsubmit="return false;">
+        <div class="input-icon-wrapper">
+          <i class="fas fa-id-card input-icon"></i>
+          <input type="text" id="recCpf" placeholder="111.111.111-11" required>
+        </div>
+        <div class="input-icon-wrapper">
+          <i class="fas fa-envelope input-icon"></i>
+          <input type="email" id="recEmail" placeholder="exemplo@email.com" required>
+        </div>
+        <button class="btn-azul" id="btnRecuperarSenha" onclick="recuperarSenha()">Recuperar Senha</button>
+        <div id="recuperarSenhaMsg" class="error"></div>
+        <div id="recuperarSenhaSuccess" class="success"></div>
+        <div style="margin-top: 10px; text-align: center;">
+          <span><a href="#" onclick="showLogin()">Voltar ao Login</a></span>
+        </div>
+      </form>
+    </div>
+
+    <div id="portal" class="hidden">
+      <button id="logoutBtn" onclick="logout()">Sair</button>
+      <div class="blue-section">
+        <h2>Bem-vindo <span id="username"></span> | Saldo: R$ <span id="saldo"></span></h2>
+      </div>
+
+      <div class="flex">
+        <div style="flex: 1">
+          <h3>Carteira</h3>
+          <table id="carteira">
+            <thead><tr><th>Ativo</th><th>Quantidade</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div style="flex: 1">
+          <h3>Book de Ofertas (B3)</h3>
+          <div class="scrollable">
+            <table id="book">
+              <thead><tr><th>Ativo</th><th>Preço Atual (R$)</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <h3>Boleta de Compra e Venda</h3>
+      <select id="tipo"><option>Compra</option><option>Venda</option></select>
+      <select id="ativo"></select>
+      <input type="number" id="quantidade" placeholder="Qtd (múltiplos de 100)">
+      <input type="number" id="valor" placeholder="Valor por lote (R$)">
+      <button class="btn-azul" onclick="executarOperacao()">Enviar Ordem</button>
+      <div id="mensagem" class="error"></div>
+
+      <h3>Alterar Senha</h3>
+      <div class="input-icon-wrapper senha-wrapper">
+        <i class="fas fa-lock input-icon"></i>
+        <input type="password" id="novaSenha" placeholder="Digite a nova senha">
+        <span class="toggleSenha" onclick="toggleSenha('novaSenha', this)">👁️</span>
+      </div>
+      <button class="btn-azul" onclick="alterarSenha()">Salvar Nova Senha</button>
+      <div id="senhaMsg" class="success"></div>
+
+      <h3>Extrato de Operações</h3>
+      <table id="extrato">
+        <thead><tr><th>Tipo</th><th>Ativo</th><th>Qtd</th><th>Valor Total (R$)</th></tr></thead>
+        <tbody></tbody>
+      </table>
+
+      <h3>Book de Ordens</h3>
+      <table id="ordens">
+        <thead><tr><th>Tipo</th><th>Ativo</th><th>Qtd</th><th>Valor</th><th>Cotação</th><th>Status</th><th>Ação</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
+

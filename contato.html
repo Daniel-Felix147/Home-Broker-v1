@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Contato - E2E Home Broker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <!-- Toggle de Tema -->
+  <button class="theme-toggle" onclick="toggleTheme()" title="Alternar tema">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <div class="main-banner">
+    <img src="Imagem/banner.jpg" alt="Banner E2E Treinamentos" class="main-banner-image">
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <img src="Imagem/logo-fundo-escuro.jpeg" alt="E2E Treinamentos" class="nav-logo-img">
+          <span class="nav-brand">E2E Treinamentos</span>
+        </div>
+        <div class="nav-menu">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="sobre.html" class="nav-link">Sobre</a>
+          <a href="servicos.html" class="nav-link">Serviços</a>
+          <a href="contato.html" class="nav-link">Contato</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container">
+    <div style="background: var(--white); border-radius: 15px; padding: 40px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); margin-bottom: 30px;">
+      <h1 style="text-align: center; color: var(--primary-color); margin-bottom: 30px;">Entre em Contato</h1>
+      <p style="text-align: center; font-size: 1.1rem; color: var(--text-light); margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
+        Nossa equipe de especialistas está pronta para ajudar você a investir melhor. Entre em contato conosco!
+      </p>
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px;">
+        <div>
+          <h2 style="color: var(--primary-color); margin-bottom: 30px; font-size: 1.5rem;">Informações de Contato</h2>
+          
+          <div style="display: flex; align-items: flex-start; margin-bottom: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px; transition: all 0.3s ease;">
+            <div style="width: 50px; height: 50px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px; flex-shrink: 0;">
+              <i class="fas fa-map-marker-alt" style="color: var(--white); font-size: 1.2rem;"></i>
+            </div>
+            <div>
+              <h3 style="color: var(--primary-color); margin-bottom: 8px; font-size: 1.1rem;">Endereço</h3>
+              <p style="color: var(--text-dark); line-height: 1.5; margin: 0;">Av. Brigadeiro Faria Lima, 3477<br>Itaim Bibi - São Paulo - SP<br>CEP: 04538-133</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: flex-start; margin-bottom: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px; transition: all 0.3s ease;">
+            <div style="width: 50px; height: 50px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px; flex-shrink: 0;">
+              <i class="fas fa-phone" style="color: var(--white); font-size: 1.2rem;"></i>
+            </div>
+            <div>
+              <h3 style="color: var(--primary-color); margin-bottom: 8px; font-size: 1.1rem;">Telefone</h3>
+              <p style="color: var(--text-dark); line-height: 1.5; margin: 0;">(11) 4000-0000<br>(11) 4000-0001</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: flex-start; margin-bottom: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px; transition: all 0.3s ease;">
+            <div style="width: 50px; height: 50px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px; flex-shrink: 0;">
+              <i class="fas fa-envelope" style="color: var(--white); font-size: 1.2rem;"></i>
+            </div>
+            <div>
+              <h3 style="color: var(--primary-color); margin-bottom: 8px; font-size: 1.1rem;">Email</h3>
+              <p style="color: var(--text-dark); line-height: 1.5; margin: 0;">atendimento@e2ebroker.com.br<br>suporte@e2ebroker.com.br</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: flex-start; margin-bottom: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px; transition: all 0.3s ease;">
+            <div style="width: 50px; height: 50px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px; flex-shrink: 0;">
+              <i class="fas fa-clock" style="color: var(--white); font-size: 1.2rem;"></i>
+            </div>
+            <div>
+              <h3 style="color: var(--primary-color); margin-bottom: 8px; font-size: 1.1rem;">Horário de Atendimento</h3>
+              <p style="color: var(--text-dark); line-height: 1.5; margin: 0;">Segunda a Sexta: 8h às 18h<br>Sábado: 9h às 13h</p>
+            </div>
+          </div>
+          
+          <div style="margin-top: 30px;">
+            <h3 style="color: var(--primary-color); margin-bottom: 15px;">Redes Sociais</h3>
+            <div style="display: flex; gap: 15px;">
+              <a href="#" style="width: 45px; height: 45px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); text-decoration: none; transition: all 0.3s ease;">
+                <i class="fab fa-facebook" style="font-size: 1.2rem;"></i>
+              </a>
+              <a href="#" style="width: 45px; height: 45px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); text-decoration: none; transition: all 0.3s ease;">
+                <i class="fab fa-instagram" style="font-size: 1.2rem;"></i>
+              </a>
+              <a href="#" style="width: 45px; height: 45px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); text-decoration: none; transition: all 0.3s ease;">
+                <i class="fab fa-linkedin" style="font-size: 1.2rem;"></i>
+              </a>
+              <a href="#" style="width: 45px; height: 45px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); text-decoration: none; transition: all 0.3s ease;">
+                <i class="fab fa-youtube" style="font-size: 1.2rem;"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div style="background: #f8f9fa; padding: 30px; border-radius: 15px;">
+          <h2 style="color: var(--primary-color); margin-bottom: 30px; font-size: 1.5rem;">Envie sua Mensagem</h2>
+          <form id="contactForm" onsubmit="enviarMensagem(event)">
+            <div style="margin-bottom: 20px;">
+              <label for="nome" style="display: block; margin-bottom: 8px; color: var(--text-dark); font-weight: 500;">Nome Completo *</label>
+              <input type="text" id="nome" name="nome" required style="width: 100%; padding: 12px 15px; border: 2px solid #e9ecef; border-radius: 8px; font-size: 1rem; transition: all 0.3s ease; box-sizing: border-box;">
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+              <label for="email" style="display: block; margin-bottom: 8px; color: var(--text-dark); font-weight: 500;">Email *</label>
+              <input type="email" id="email" name="email" required style="width: 100%; padding: 12px 15px; border: 2px solid #e9ecef; border-radius: 8px; font-size: 1rem; transition: all 0.3s ease; box-sizing: border-box;">
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+              <label for="telefone" style="display: block; margin-bottom: 8px; color: var(--text-dark); font-weight: 500;">Telefone</label>
+              <input type="tel" id="telefone" name="telefone" style="width: 100%; padding: 12px 15px; border: 2px solid #e9ecef; border-radius: 8px; font-size: 1rem; transition: all 0.3s ease; box-sizing: border-box;">
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+              <label for="assunto" style="display: block; margin-bottom: 8px; color: var(--text-dark); font-weight: 500;">Assunto *</label>
+              <select id="assunto" name="assunto" required style="width: 100%; padding: 12px 15px; border: 2px solid #e9ecef; border-radius: 8px; font-size: 1rem; transition: all 0.3s ease; box-sizing: border-box;">
+                <option value="">Selecione um assunto</option>
+                <option value="conta">Abertura de conta</option>
+                <option value="investimentos">Consultoria de investimentos</option>
+                <option value="daytrading">Day Trading</option>
+                <option value="fii">Fundos Imobiliários</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+              <label for="mensagem" style="display: block; margin-bottom: 8px; color: var(--text-dark); font-weight: 500;">Mensagem *</label>
+              <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Digite sua mensagem aqui..." style="width: 100%; padding: 12px 15px; border: 2px solid #e9ecef; border-radius: 8px; font-size: 1rem; transition: all 0.3s ease; box-sizing: border-box; resize: vertical; min-height: 120px;"></textarea>
+            </div>
+            
+            <button type="submit" style="background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); color: var(--white); border: none; padding: 15px 30px; border-radius: 25px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden;">
+              <span id="btnText">Enviar Mensagem</span>
+              <span id="btnLoading" style="display: none;">Enviando...</span>
+            </button>
+          </form>
+          
+          <div id="contactMsg" style="padding: 15px; border-radius: 8px; margin-top: 20px; text-align: center; font-weight: 500;"></div>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 40px;">
+        <h2 style="color: var(--primary-color); margin-bottom: 20px;">Nossa Localização</h2>
+        <div style="background: #f8f9fa; border: 2px dashed #dee2e6; border-radius: 15px; padding: 60px 20px; color: var(--text-light);">
+          <i class="fas fa-map" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 20px; display: block;"></i>
+          <p style="margin: 10px 0; font-size: 1.1rem;">Mapa interativo seria exibido aqui</p>
+          <p style="margin: 10px 0; font-size: 1.1rem;">Av. Brigadeiro Faria Lima, 3477 - Itaim Bibi, São Paulo, SP</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Função para enviar mensagem de contato
+    function enviarMensagem(event) {
+      event.preventDefault();
+      
+      const btnText = document.getElementById('btnText');
+      const btnLoading = document.getElementById('btnLoading');
+      const msgElement = document.getElementById('contactMsg');
+      
+      // Mostrar loading
+      btnText.style.display = 'none';
+      btnLoading.style.display = 'inline';
+      msgElement.textContent = '';
+      msgElement.style.background = '';
+      msgElement.style.color = '';
+      msgElement.style.border = '';
+      
+      // Simular envio
+      setTimeout(() => {
+        btnText.style.display = 'inline';
+        btnLoading.style.display = 'none';
+        msgElement.textContent = 'Mensagem enviada com sucesso! Entraremos em contato em breve.';
+        msgElement.style.background = '#d4edda';
+        msgElement.style.color = '#155724';
+        msgElement.style.border = '1px solid #c3e6cb';
+        
+        // Limpar formulário
+        document.getElementById('contactForm').reset();
+        
+        // Limpar mensagem após 5 segundos
+        setTimeout(() => {
+          msgElement.textContent = '';
+          msgElement.style.background = '';
+          msgElement.style.color = '';
+          msgElement.style.border = '';
+        }, 5000);
+      }, 2000);
+    }
+    
+    // Carregar tema salvo
+    document.addEventListener('DOMContentLoaded', function() {
+      loadTheme();
+    });
+  </script>
+</body>
+</html> 

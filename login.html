@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E2E Home Broker – Login</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="login.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <img src="Imagem/logo-fundo-escuro.jpeg" class="logo" alt="E2E Logo" />
+    <h1>E2E Home Broker</h1>
+    <h2>Login</h2>
+    
+    <div class="demo-accounts">
+      <p>Contas de demonstração:</p>
+      <ul>
+        <li><strong>CPF:</strong> 111.111.111-11 | <strong>Senha:</strong> 123 → Conta A</li>
+        <li><strong>CPF:</strong> 222.222.222-22 | <strong>Senha:</strong> 456 → Conta B</li>
+      </ul>
+    </div>
+    
+    <div class="input-icon-wrapper">
+      <i class="fas fa-id-card input-icon"></i>
+      <input type="text" id="cpfLogin" placeholder="CPF (000.000.000-00)" maxlength="14" />
+    </div>
+    
+    <div class="input-icon-wrapper senha-wrapper">
+      <i class="fas fa-lock input-icon"></i>
+      <input type="password" id="senhaLogin" placeholder="Senha" />
+      <span class="toggleSenha" onclick="toggleSenha('senhaLogin', this)">👁️</span>
+    </div>
+    
+    <button onclick="realizarLogin()">Entrar</button>
+    <p id="loginMsg" class="error"></p>
+    
+    <div class="login-links">
+      <p>Não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
+      <p><a href="#" onclick="showRecuperarSenha()">Esqueci minha senha</a></p>
+    </div>
+  </div>
+  
+  <script src="sistema.js"></script>
+</body>
+</html>
